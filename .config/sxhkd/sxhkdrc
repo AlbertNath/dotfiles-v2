@@ -4,11 +4,11 @@
 
 # terminal emulator
 super + Return
-    gnome-terminal	
+  gnome-terminal	
 
 # program launcher
-super + @space
-    rofi -show run	
+ctrl + super + m 
+  ~/.config/rofi/launchers/type-7/launcher.sh	
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -163,20 +163,23 @@ ctrl + alt + shift + {Down,Up}
 
 # Screenshots 
 Print 
-	scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
+	filename=~/Pictures/screenshots/screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png; gnome-screenshot -w -f "$filename" && xclip -selection clipboard -t image/png -i "$filename"
 
 shift + Print 
-	scrot -u --focused "screenshot_%Y%m%d_%H%M%S.png" -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' 
+	filename=~/Pictures/screenshots/screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png; gnome-screenshot -a -f "$filename"
 
 shift + F11
-	scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
+	filename=~/Pictures/screenshots/screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png; gnome-screenshot -a -f "$filename"
 
 shift + F12 
-	scrot -u --focused "screenshot_%Y%m%d_%H%M%S.png" -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' 
+	filename=~/Pictures/screenshots/screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png; gnome-screenshot -w -f "$filename" && xclip -selection clipboard -t image/png -i "$filename"
 
 # Lock screen 
 super + l
     dm-tool lock
+
+ctrl + super + {Prior, Next} 
+	setxkbmap {latam,us}
 
 # Switch keyboard layout
 # ctrl + shift + fn 
