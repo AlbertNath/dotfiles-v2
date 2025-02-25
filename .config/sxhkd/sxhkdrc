@@ -166,10 +166,10 @@ Print
 	filename=~/Pictures/screenshots/screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png; gnome-screenshot -w -f "$filename" && xclip -selection clipboard -t image/png -i "$filename"
 
 shift + Print 
-	filename=~/Pictures/screenshots/screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png; gnome-screenshot -a -f "$filename"
+	filename=~/Pictures/screenshots/screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png; gnome-screenshot -a -f "$filename" && xclip -selection clipboard -t image/png -i "$filename"
 
 shift + F11
-	filename=~/Pictures/screenshots/screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png; gnome-screenshot -a -f "$filename"
+	filename=~/Pictures/screenshots/screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png; gnome-screenshot -a -f "$filename" && xclip -selection clipboard -t image/png -i "$filename"
 
 shift + F12 
 	filename=~/Pictures/screenshots/screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png; gnome-screenshot -w -f "$filename" && xclip -selection clipboard -t image/png -i "$filename"
