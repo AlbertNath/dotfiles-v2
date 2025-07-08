@@ -184,3 +184,7 @@ ctrl + super + {Prior, Next}
 # Switch keyboard layout
 # ctrl + shift + fn 
 #     {setxkbmap latam, setxkbmap us}
+#
+# External monitor mode 
+super + shift + m
+    /home/corrupter/.config/bspwm/scripts/toggle_display.sh
